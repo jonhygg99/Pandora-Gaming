@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pandora_gaming/views/mainPage.dart';
 
 import 'views/header/footer.dart';
 import 'views/header/formation.dart';
@@ -12,7 +13,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,10 +22,11 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: ListView(
           children: const [
-            Header(),
-            Services(),
-            Formation(),
-            Footer(),
+            MainPage(),
+            // Header(),
+            // Services(),
+            // Formation(),
+            // Footer(),
           ],
         ),
       ),
