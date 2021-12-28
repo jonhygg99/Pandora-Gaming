@@ -10,7 +10,7 @@ class Services extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 110),
-      color: Colors.black54,
+      color: kDBlack,
       child: Column(
         children: [
           Wrap(

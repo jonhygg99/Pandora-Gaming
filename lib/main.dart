@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pandora_gaming/views/mainPage.dart';
+import 'package:pandora_gaming/views/Testimonials/testimonials.dart';
+import 'package:pandora_gaming/views/mainPage/main_page.dart';
 
 import 'views/header/footer.dart';
 import 'views/header/formation.dart';
@@ -23,9 +24,10 @@ class MyApp extends StatelessWidget {
         body: ListView(
           children: const [
             MainPage(),
-            // Header(),
-            // Services(),
+            Services(),
             // Formation(),
+            Testimonials(),
+            // Header(),
             // Footer(),
           ],
         ),
