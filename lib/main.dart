@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pandora_gaming/views/Testimonials/testimonials.dart';
-import 'package:pandora_gaming/views/mainPage/main_page.dart';
 
-import 'views/header/footer.dart';
-import 'views/header/formation.dart';
-import 'views/header/header.dart';
-import 'views/header/services.dart';
+import 'views/Footer/footer.dart';
+import 'views/MainPage/main_page.dart';
+import 'views/Testimonials/testimonials.dart';
+import 'views/formation.dart';
+import 'views/TalentDevelopment/talent_development.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,11 +23,10 @@ class MyApp extends StatelessWidget {
         body: ListView(
           children: const [
             MainPage(),
-            Services(),
+            TalentDevelopment(),
             // Formation(),
             Testimonials(),
-            // Header(),
-            // Footer(),
+            Footer(),
           ],
         ),
       ),
