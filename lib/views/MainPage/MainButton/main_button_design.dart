@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pandora_gaming/constants/color.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MainButtonDesign extends StatelessWidget {
@@ -18,34 +19,55 @@ class MainButtonDesign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: _launchURL,
-      style: ElevatedButton.styleFrom(
-        primary: kWhite,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(0.0),
-        ),
-        elevation: 0,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(50.0),
-        child: Row(
-          children: [
-            isLeft
-                ? Padding(
-              padding: const EdgeInsets.only(right: 15.0),
-              child: icon,
-            )
-                : Container(),
-            Text(
-              title,
-              style: const TextStyle(fontSize: 30, color: kBlack),
+    return ResponsiveBuilder(
+      builder: (context, sizingInformation) {
+        final screenWidth = MediaQuery.of(context).size.width;
+        double buttonWidth = 350;
+        double fontSize = 30;
+
+        if (sizingInformation.deviceScreenType == DeviceScreenType.mobile) {
+          buttonWidth = screenWidth;
+          fontSize = 25;
+        } else if (sizingInformation.deviceScreenType == DeviceScreenType.tablet) {
+          buttonWidth = screenWidth / 2;
+          fontSize = 20;
+        }
+
+        return ElevatedButton(
+          onPressed: _launchURL,
+          style: ElevatedButton.styleFrom(
+            primary: kWhite,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(0.0),
             ),
-            Container(width: isLeft ? 0 : 15),
-            isLeft ? Container() : icon
-          ],
-        ),
-      ),
+            elevation: 0,
+          ),
+          child: SizedBox(
+            width: buttonWidth,
+            height: 150,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                isLeft
+                    ? Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: icon,
+                      )
+                    : Container(),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: fontSize,
+                    color: kBlack,
+                  ),
+                ),
+                Container(width: isLeft ? 0 : 15),
+                isLeft ? Container() : icon,
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 

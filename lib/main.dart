@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
+        // TODO:
+        // https://www.youtube.com/watch?v=ts9n211n8ZU
         body: ListView(
           children: const [
             MainPage(),
