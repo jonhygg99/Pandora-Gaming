@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'views/Footer/footer.dart';
 import 'views/MainPage/main_page.dart';
 import 'views/Testimonials/testimonials.dart';
-import 'views/formation.dart';
 import 'views/TalentDevelopment/talent_development.dart';
 
 void main() {

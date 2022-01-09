@@ -60,7 +60,6 @@ class MainPage extends StatelessWidget {
                   : mainHeightImage / 3 - 100,
               left: isSmallDevice ? screenWidth / 10 : screenWidth / 16,
               // height: containerHeight,
-
               child: const MainTitle(),
             ),
             const Positioned(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pandora_gaming/constants/social_networks.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import 'constants.dart';
 import 'navigation_icon.dart';
 import 'navigation_text.dart';
 
@@ -13,7 +14,7 @@ class MainNavigationBar extends StatelessWidget {
     return ResponsiveBuilder(
         builder: (context, sizingInformation) {
           double verticalPadding = 30;
-          double horizontalPadding = 20;
+          double horizontalPadding = 30;
 
       if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
         verticalPadding = 30;
@@ -37,13 +38,9 @@ class MainNavigationBar extends StatelessWidget {
               ),
               Wrap(
                 spacing: 30.0,
-                children: const [
-                  NavText('Activity'),
-                  NavText('Roadmap'),
-                  NavText('NFT (Coming soon!)'),
-                  NavText('About us'),
-                  NavText('Contact'),
-                ],
+                children: List.generate(navigationList.length, (index) {
+                  return NavText(text: navigationList[index]);
+                }),
               ),
               Wrap(
                 spacing: 15.0,

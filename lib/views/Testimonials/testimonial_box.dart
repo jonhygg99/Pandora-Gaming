@@ -30,41 +30,44 @@ class TestimonialBox extends StatelessWidget {
         fontSizePerson = 20;
         fontSizeCompany = 16;
         boxWidth = boxWidthMobile;
-        boxHeight = boxHeightMobile;
+        boxHeight = 250;
       }
 
-        return Container(
-          color: kDarkBlue,
-          width: boxWidth,
-          height: boxHeight,
-          child: Padding(
-            padding: const EdgeInsets.all(35.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  testimonial,
-                  style:
-                   TextStyle(
-                      color: kDarkWhite, fontSize: fontSizeTestimony, height: 2),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      person,
-                      style:  TextStyle(color: kWhite, fontSize: fontSizePerson),
-                    ),
-                    Container(height: 10),
-                    Text(
-                      company,
-                      style:  TextStyle(
-                          color: kDarkWhite, fontSize: fontSizeCompany),
-                    )
-                  ],
-                ),
-              ],
+        return ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: boxWidthDesktop, minWidth: boxWidthMobile, maxHeight: boxHeightDesktop, minHeight: boxHeightMobile),
+          child: Container(
+            color: kDarkBlue,
+            // width: boxWidth,
+            // height: boxHeight,
+            child: Padding(
+              padding: const EdgeInsets.all(35.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    testimonial,
+                    style:
+                     TextStyle(
+                        color: kDarkWhite, fontSize: fontSizeTestimony, height: 2),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        person,
+                        style:  TextStyle(color: kWhite, fontSize: fontSizePerson),
+                      ),
+                      Container(height: 10),
+                      Text(
+                        company,
+                        style:  TextStyle(
+                            color: kDarkWhite, fontSize: fontSizeCompany),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         );

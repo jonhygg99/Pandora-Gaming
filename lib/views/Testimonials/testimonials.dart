@@ -53,7 +53,6 @@ class Testimonials extends StatelessWidget {
                 Container(
                   width: boxWidth,
                   height: boxHeight,
-                  color: Colors.white54,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -82,12 +81,11 @@ class Testimonials extends StatelessWidget {
                   ),
                 ),
                 isTablet
-                    ? Container(
+                    ? const SizedBox(
                         width: boxWidthMobile,
                         height: boxHeightMobile,
-                        color: Colors.white54,
                       )
-                    : Container(),
+                    : const SizedBox(width: 0, height: 0),
                 for (var testimony in testimonies) testimony,
               ],
             ),
